@@ -1,7 +1,6 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
-import ReactDOM from 'react-dom';
-import DetailViewer from './DetailViewer';
+import DetailViewer from '../components/DetailViewer';
 
 const testData= {
     name: 'test-name',
@@ -15,7 +14,7 @@ test('render viewer', ()=> {
     const wrapper= shallow(<DetailViewer item={testData}/>);
     let { name, order, sprites }= testData;
     const viewer= <div>
-        <h6>{name}</h6>
+        <h3>{name}</h3>
         <p>Order: {order}</p>
         <div>
             <img src={sprites.front_default} alt="no_img"/>

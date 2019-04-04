@@ -1,13 +1,17 @@
 import React, { Component } from 'react'
 
 class DetailViewer extends Component {
+    
     render() {
         let { name, order, sprites}= this.props.item;
+        let front_default= '';
+        if (sprites) front_default= sprites.front_default; 
+        
         return <div>
-            <h6>{name}</h6>
+            <h3>{name}</h3>
             <p>Order: {order}</p>
             <div>
-                <img src={sprites.front_default} alt="no_img"/>
+                <img src={front_default} alt="no_img"/>
             </div>
         </div>
     }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import SimpleComp from './SimpleComp';
+import SimpleComp from './components/SimpleComp';
 
 class App extends Component {
   render() {
