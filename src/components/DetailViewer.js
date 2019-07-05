@@ -1,6 +1,7 @@
 import React from 'react'
 
 const DetailViewer =(props)=> {
+    // console.log('props: ', props.item)
     let { name, order, sprites}= props.item;
     let front_default= '';
     if (sprites) front_default= sprites.front_default; 
