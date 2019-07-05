@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ListViewer from './ListViewer';
 import DetailViewer from './DetailViewer';
+import RefsTest from './RefsTest';
 
 const getUrl= (page, limit)=> `https://pokeapi.co/api/v2/pokemon?offset=${(page-1)*limit}&limit=${limit}`;
 const getPokeUrl= (name)=> `https://pokeapi.co/api/v2/pokemon/${name}`;
@@ -24,11 +25,11 @@ const SimpleComp= ()=> {
         if (selectedPoke) axios.get(getPokeUrl(selectedPoke)).then((res)=> {
             let { name, order, sprites }= res.data;
             let item= { name, order, sprites };
-            setItemDetail(item)
+            setItemDetail(item);
         });
     }, [selectedPoke])
 
-    const onListClick= (name)=> setSelectedPoke(name)
+    const onListClick= (name)=> setSelectedPoke(name);
 
     return <div style={{display: 'flex'}}>
         <div style={{flex: '1'}}> 
@@ -45,6 +46,7 @@ const SimpleComp= ()=> {
             </select>
         </div>
         <div style={{ flex: '1' }}>
+            <RefsTest />
             {selectedPoke && <div>
                 <DetailViewer item={itemDetail}/>
             </div>}
